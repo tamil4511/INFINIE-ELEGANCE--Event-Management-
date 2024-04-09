@@ -1,0 +1,154 @@
+.stageDecoration-heading {
+    text-align: center;
+    margin-top: 50px;
+}
+ 
+.stageDecoration-title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #e2e2e2 ;
+    color: #060606;
+    position: relative;
+}
+ 
+.stageDecoration-title::before {
+    content: '';
+    width: 50px; /* Adjust width as needed */
+    height: 50px;
+    background-color: #e2e2e2 ;
+    position: absolute;
+    border-radius: 0 0 0 10px;
+    top: 40px; /* Corrected value */
+    left: -20px; /* Adjust left position as needed */
+    z-index: -1;
+}
+.stageDecoration-title::after {
+    content: '';
+    width: 50px; /* Adjust width as needed */
+    height: 50px;
+    background-color: #e2e2e2 ;
+    border-radius: 0 10px 0 0;
+    position: absolute;
+    top: -15px; /* Corrected value */
+    left: 335px; /* Adjust left position as needed */
+    z-index: -1;
+}
+.dec
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.decoration-image
+{
+    width: 300px;
+    height: 300px;
+}
+.decoration-heading{
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+}
+.decoration-text
+{
+    text-align: center;
+    width: 100%;
+}
+.cost-font
+{
+    font-size: 25px !important;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.decoration-button
+{
+    width: 40%;
+    height: 40px;
+    padding: 7px;
+    background-color: rgb(215, 215, 234);
+    color: rgb(5, 5, 5);
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+.decoration-text{
+    align-items: center;
+}
+.decoration-button {
+    padding:10px 10px;
+    background: linear-gradient(to right, rgb(5, 5, 5) 0%, rgb(5, 5, 5) 50%, transparent 50%, transparent 100%);
+    background-size: 200% 100%;
+    background-position: right;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    background-color: #e4e1e1;
+    cursor: pointer;
+    transition: background-position 0.9s ease;
+}
+.decoration-button:hover {
+    background-color: #888;
+    color: white;
+    background-position: left;
+}
+
+.decoration-detail-p
+{
+    padding: 10px;
+    font-size: 20px;
+}
+
+@media(max-width:900px)
+{
+    .dec{
+        flex-direction: column;
+    }
+}
+
+
+
+.stagedecoration-images img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+.stagedecoration-images img:hover
+{
+    transform: scale(1.5);
+    transition: transform 0.5s;
+}
+.stagedecoration-model-content
+{
+    text-align: center;
+    background-color: #ededed;
+    padding: 20px 0;
+}
+.stagedecoration-title h3
+{
+    font-size: 30px;
+    margin: 10px 0;
+    font-weight: 800;
+}
+.stagedecoration-description p{
+    font-size:20px;
+    padding: 10px;
+}
+.stagedecoration-cost h4
+{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.model-lg
+{   
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+}
+
+.placeorder-button
+{
+    width: 200px;
+}
