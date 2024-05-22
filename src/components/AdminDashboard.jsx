@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import axios from 'axios';
 import img from '../assets/dj.jpg'
 import '../cssfolder/AdminDashboard.css';
+import AdminDJ from './AdminDJ';
 
 const AdminDashboard = () => {
     const [stageDecorationContent, setStageDecorationContent] = useState([{}]);
@@ -359,6 +360,7 @@ const AdminDashboard = () => {
             )}
 
 
+            {ActiveStatus === "dj" && <AdminDJ/>}
 
 
 

@@ -123,7 +123,17 @@
 }
 
 
-
+.btn-back
+{
+    background-color: blue;
+    width:100px;
+    margin: 20px;
+    padding:10px 20px;
+    font-size: 15px;
+    color: white;
+    font-weight: 800;
+    border-radius: 10px;
+}
 
 
 

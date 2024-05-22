@@ -14,15 +14,16 @@ function App() {
     <>
     {/* <LoginAndRegister /> */}
     <Router>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<LoginAndRegister />} />
         <Route path="/Home" element={<Home />} />
         <Route path='/Gallery' element={<Gallery/>}/>
         <Route path='/StageDecoration' element={<StageDecoration/>}/>
-      </Routes>
+        <Route path='/DJ' element={<DJ/>}/>
+      </Routes> */}
     </Router>
     {/* <DJ /> */}
-    {/* <AdminDashboard /> */}
+    <AdminDashboard />
     {/* <Home /> */}
     {/* <Header /> */}
     {/* <Gallery /> */}

@@ -47,11 +47,13 @@ const StageDecoration = () => {
     const currentStageDecoration = stageDecorationContent.find(item => item.id === id);
     setCurrentStageDecorationModelContent(currentStageDecoration);
   };
-
+  function back() {
+    window.history.back();
+  }
   return (
     <div>
-      <div className="row w-25">
-        <div className="btn btn-warning float-start ms-5">back</div>
+      <div className="row mt-4 w-25">
+        <div className="btn back-btn float-start ms-5" onClick={back}>back</div>
       </div>
       <div className="stageDecoration">
         <div className="stageDecoration-heading">

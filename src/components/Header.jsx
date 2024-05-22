@@ -14,6 +14,9 @@ const Header = () => {
     if (selectedOption === "1") {
       navigate('/StageDecoration',{ state: { value: { email: email, password: password } } });
     } 
+    if(selectedOption === "2"){
+      navigate('/DJ',{ state: { value: { email: email, password: password } } });
+    }
   };
 
   return (
@@ -48,7 +51,7 @@ const Header = () => {
                     <select id="custom-select" onChange={handleSelectChange}>
                       <option value="0" className='nav-item-select-option' selected disabled>Select Event</option>
                       <option value="1" className='nav-item-select-option'>STAGE DECORATION</option>
-                      <option value="2" className='nav-item-select-option'>Option 2</option>
+                      <option value="2" className='nav-item-select-option'>DJ</option>
                       <option value="3" className='nav-item-select-option'>Option 3</option>
                     </select>
                   </div>
