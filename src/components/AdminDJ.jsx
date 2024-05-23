@@ -115,7 +115,7 @@ const AdminDJ = () => {
     return (
         <div>
             <div className="admin-dj">
-                <div className="container">
+                <div className="container" style={{marginTop:"80px"}}>
                     <div className="main-content dj">
                         <div className="addimage-form">
                             <div className="addimage-form-group">

@@ -1,0 +1,87 @@
+.artist-type
+{
+    width: 100%;
+    background-color: #ebe2e2;
+    padding: 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+.stars
+{   
+    font-size: 30px;
+}
+.main-div
+{   
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#makeup-image
+{
+    margin: auto;
+    padding: 10px 0;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    justify-content: center;
+}
+.rating-head
+{
+    background-color: #ebe2e2;
+    padding: 10px 0;
+    font-size: 17px;
+    border-radius: 10px;
+}
+.rate {
+    width: 100%;
+    float: left;
+    height: 46px;
+    padding: 0 120px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#fff;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.img-div
+{
+    width: 100%;
+    gap: 10px;
+    display: flex;
+}
+.img-div img{
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    border-radius: 10px;
+}

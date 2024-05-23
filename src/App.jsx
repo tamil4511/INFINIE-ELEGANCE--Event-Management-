@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import StageDecoration from './components/StageDecoration';
 import DJ from './components/DJ';
 import AdminDashboard from './components/AdminDashboard';
+import AdminMakeup from './components/AdminMakeup';
 function App() {
   return (
     <>
@@ -23,10 +24,11 @@ function App() {
       </Routes> */}
     </Router>
     {/* <DJ /> */}
-    <AdminDashboard />
+    {/* <AdminDashboard /> */}
     {/* <Home /> */}
     {/* <Header /> */}
     {/* <Gallery /> */}
+    <AdminMakeup/>
     {/* <StageDecoration /> */}
     </>
   );
