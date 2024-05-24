@@ -102,6 +102,111 @@ if ($method == "upload makeup") {
         echo json_encode(['data' => [], 'message' => 'No data found']);
     }
 } 
+else if($method=="update")
+{
+    
+    $id = $_POST['id'] ?? '';
+    $name = $_POST['name'] ?? '';
+    $type = $_POST['type'] ?? '';
+    $rate = $_POST['rate'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $price = $_POST['price'] ?? '';
+
+    $artistProfileImages = [];
+    $samplePhotos = [];
+    $uploadDir = '../makeup/';
+
+    // Create the directory if it does not exist
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    // Fetch the existing images from the database
+    $query = "SELECT artist_profile_images, sample_photos FROM makeup WHERE id='$id'";
+    $result = mysqli_query($db_connect, $query);
+    if (!$result) {
+        echo json_encode(['message' => 'Failed to fetch existing images']);
+        exit();
+    }
+    $row = mysqli_fetch_assoc($result);
+
+    $existingArtistProfileImages = explode(',', $row['artist_profile_images']);
+    $existingSamplePhotos = explode(',', $row['sample_photos']);
+
+    // Handle artist profile images
+    if (!empty($_FILES['artistProfileImages']['tmp_name'][0])) {
+        foreach ($_FILES['artistProfileImages']['tmp_name'] as $key => $tmp_name) {
+            $fileName = uniqid() . '_' . basename($_FILES['artistProfileImages']['name'][$key]);
+            $uploadPath = $uploadDir . $fileName;
+
+            if (move_uploaded_file($tmp_name, $uploadPath)) {
+                // Unlink the old image if it exists
+                if (isset($existingArtistProfileImages[$key])) {
+                    unlink($uploadDir . $existingArtistProfileImages[$key]);
+                }
+                $artistProfileImages[] = $fileName;
+            } else {
+                echo json_encode([
+                    "statusCode" => 201,
+                    "message" => "Failed to move uploaded artist profile image"
+                ]);
+                exit();
+            }
+        }
+    } else {
+        $artistProfileImages = $existingArtistProfileImages;
+    }
+
+    // Handle sample photos
+    if (!empty($_FILES['samplePhotos']['tmp_name'][0])) {
+        foreach ($_FILES['samplePhotos']['tmp_name'] as $key => $tmp_name) {
+            $fileName = uniqid() . '_' . basename($_FILES['samplePhotos']['name'][$key]);
+            $uploadPath = $uploadDir . $fileName;
+
+            if (move_uploaded_file($tmp_name, $uploadPath)) {
+                // Unlink the old photo if it exists
+                if (isset($existingSamplePhotos[$key])) {
+                    unlink($uploadDir . $existingSamplePhotos[$key]);
+                }
+                $samplePhotos[] = $fileName;
+            } else {
+                echo json_encode([
+                    "statusCode" => 201,
+                    "message" => "Failed to move uploaded sample photo"
+                ]);
+                exit();
+            }
+        }
+    } else {
+        $samplePhotos = $existingSamplePhotos;
+    }
+
+    $artistProfileImagesStr = implode(',', $artistProfileImages);
+    $samplePhotosStr = implode(',', $samplePhotos);
+
+    // Build the update query dynamically
+    $updateFields = [];
+    if ($name != null) $updateFields[] = "name='$name'";
+    if ($type != null) $updateFields[] = "type='$type'";
+    if ($rate != null) $updateFields[] = "rate='$rate'";
+    if ($description != null) $updateFields[] = "description='$description'";
+    if ($price != null) $updateFields[] = "price='$price'";
+    if (!empty($artistProfileImagesStr)) $updateFields[] = "artist_profile_images='$artistProfileImagesStr'";
+    if (!empty($samplePhotosStr)) $updateFields[] = "sample_photos='$samplePhotosStr'";
+
+    if (count($updateFields) > 0) {
+        $updateQuery = "UPDATE makeup SET " . implode(', ', $updateFields) . " WHERE id='$id'";
+
+        if (mysqli_query($db_connect, $updateQuery)) {
+            echo json_encode(["data" => "200", 'message' => 'Update Successful']);
+        } else {
+            echo json_encode(['message' => 'Failed to update makeup details']);
+        }
+    } else {
+        echo json_encode(['message' => 'No fields to update']);
+    }
+}
+
 else if(true)
 {
     echo "working";

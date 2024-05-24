@@ -1,0 +1,105 @@
+.makeup-heading {
+    text-align: center;
+    margin-top: 50px;
+}
+ 
+.makeup-title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #e2e2e2 ;
+    color: #060606;
+    position: relative;
+}
+ 
+.makeup-title::before {
+    content: '';
+    width: 50px; /* Adjust width as needed */
+    height: 50px;
+    background-color: #e2e2e2 ;
+    position: absolute;
+    border-radius: 0 0 0 10px;
+    top: 40px; /* Corrected value */
+    left: -20px; /* Adjust left position as needed */
+    z-index: -1;
+}
+.makeup-title::after {
+    content: '';
+    width: 50px; /* Adjust width as needed */
+    height: 50px;
+    background-color: #e2e2e2 ;
+    border-radius: 0 10px 0 0;
+    position: absolute;
+    top: -15px; /* Corrected value */
+    left: 150px; /* Adjust left position as needed */
+    z-index: -1;
+}
+
+.makeup-heading{
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+}
+.makeup-text
+{
+    text-align: center;
+    width: 100%;
+}
+.cost-font
+{
+    font-size: 25px !important;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.makeup-button
+{
+    width: 40%;
+    height: 40px;
+    padding: 7px;
+    background-color: rgb(215, 215, 234);
+    color: rgb(5, 5, 5);
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+.makeup-text{
+    align-items: center;
+}
+.makeup-button {
+    padding:10px 10px;
+    background: linear-gradient(to right, rgb(5, 5, 5) 0%, rgb(5, 5, 5) 50%, transparent 50%, transparent 100%);
+    background-size: 200% 100%;
+    background-position: right;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    background-color: #e4e1e1;
+    cursor: pointer;
+    transition: background-position 0.9s ease;
+}
+.makeup-button:hover {
+    background-color: #888;
+    color: white;
+    background-position: left;
+}
+.makeup-detail-p
+{
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+.main-div img{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.dec
+{   
+    margin: 15px 0;
+    background-color: #882;
+    color: white;
+    padding: 14px;
+    border-radius: 25px 0 25px 0;
+}

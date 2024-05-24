@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../cssfolder/adminmakeup.css';
 import axios from 'axios';
-import { RiH3 } from 'react-icons/ri';
 
 const AdminMakeup = () => {
     const [selectedImages, setSelectedImages] = useState([]);
@@ -107,11 +106,45 @@ const AdminMakeup = () => {
                 console.error('Error deleting data:', error);
             });
     };
-    const Update=()=>{
-        const form=new FormData();
-        form.append('id',currentId);
-        form.append()
-    }
+    const Update = () => {
+        const form = new FormData();
+        form.append('id', currentId);
+        form.append('name', formData.name);
+        form.append('type', formData.type);
+        form.append('rate', formData.rate);
+        form.append('description', formData.description);
+        form.append('price', formData.price);
+        form.append('action', "update");
+    
+        selectedImages.forEach((image, index) => {
+            form.append(`artistProfileImages[${index}]`, image);
+        });
+    
+        samplePhotos.forEach((photo, index) => {
+            form.append(`samplePhotos[${index}]`, photo);
+        });
+    
+        axios.post('http://localhost/Event-Handling - Copy - Copy/src/Php_Folder/makeup.php', form)
+            .then((response) => {
+                setState(true);
+                alert(response.data.message);
+                setSamplePhotos([]);
+                setSelectedImages([]);
+                setFormData({
+                    name: '',
+                    type: '',
+                    rate: '',
+                    description: '',
+                    price: ''
+                });
+                if (fileInputRef.current) fileInputRef.current.value = '';
+                if (samplePhotosInputRef.current) samplePhotosInputRef.current.value = '';
+            })
+            .catch((error) => {
+                console.error('There was an error updating the data!', error);
+            });
+    };
+    
     return (
         <div>
             <div className="container">

@@ -10,25 +10,28 @@ import StageDecoration from './components/StageDecoration';
 import DJ from './components/DJ';
 import AdminDashboard from './components/AdminDashboard';
 import AdminMakeup from './components/AdminMakeup';
+import MakeUp from './components/MakeUp';
 function App() {
   return (
     <>
     {/* <LoginAndRegister /> */}
     <Router>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<LoginAndRegister />} />
         <Route path="/Home" element={<Home />} />
         <Route path='/Gallery' element={<Gallery/>}/>
         <Route path='/StageDecoration' element={<StageDecoration/>}/>
         <Route path='/DJ' element={<DJ/>}/>
-      </Routes> */}
+        <Route path='/MakeUp' element={<MakeUp/>}/>
+      </Routes>
     </Router>
     {/* <DJ /> */}
     {/* <AdminDashboard /> */}
     {/* <Home /> */}
     {/* <Header /> */}
     {/* <Gallery /> */}
-    <AdminMakeup/>
+    {/* <MakeUp/> */}
+    {/* <AdminMakeup/> */}
     {/* <StageDecoration /> */}
     </>
   );

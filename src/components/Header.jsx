@@ -17,6 +17,9 @@ const Header = () => {
     if(selectedOption === "2"){
       navigate('/DJ',{ state: { value: { email: email, password: password } } });
     }
+    if(selectedOption === "3"){
+      navigate('/MakeUp',{ state: { value: { email: email, password: password } } });
+    }
   };
 
   return (
@@ -52,7 +55,7 @@ const Header = () => {
                       <option value="0" className='nav-item-select-option' selected disabled>Select Event</option>
                       <option value="1" className='nav-item-select-option'>STAGE DECORATION</option>
                       <option value="2" className='nav-item-select-option'>DJ</option>
-                      <option value="3" className='nav-item-select-option'>Option 3</option>
+                      <option value="3" className='nav-item-select-option'>MAKEUP</option>
                     </select>
                   </div>
                 </li>
